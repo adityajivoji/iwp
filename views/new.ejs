@@ -1,0 +1,47 @@
+
+<% include ./partials/header %>
+
+
+<link rel="stylesheet" href="/views/new.css">
+
+	<div id = "form">
+	<h3>Add New Product</h3>
+	  <form action="/products" method="POST">
+		<label >Product Brand</label>
+		<select type="text" name="product[brand]" placeholder="Brand" required="true">
+            <option value="Apple">Apple</option>
+            <option value="Boat">BoAt</option>
+            <option value="JBL">JBL</option>
+            <option value="Skull Candy">Skull Candy</option>
+            <option value="Bose">Bose</option>
+            <option value="Sennheiser">Sennheiser</option>
+        </select>
+
+        <label >Product Category</label>
+        <select type="text" name="product[category]" placeholder="Category" required="true">
+            <option value="Headphone">Headphone</option>
+            <option value="Mobile Accesories">Mobile Accesories</option>
+            <option value="Tablet">Tablet</option>
+            <option value="Smart Watch">Smart Watch</option>
+            <option value="Smart Phone">Smart Phone</option>
+            <option value="Truly Wireless">Truly Wireless</option>
+        </select>
+		<label >Product Name</label>
+		<input type="text"  name="product[title]" placeholder="Name" required="true">
+	
+		<label>Product Image</label>
+		<input type="text" name="product[image]" placeholder="Image" required="true">
+
+		<label>Product Description</label>
+		<input type="text" name="product[body]" placeholder="Description" required="true">
+		<label>Product Price</label>
+		<input type="text" name="product[price]" placeholder="Price" required="true">
+
+		<div>
+			<button class="button"><a href="/products/new">Cancel</a></button>
+			<button class="button" type="submit">Submit</button>
+		</div>
+		
+	  </form>
+	</div>
+	<% include ./partials/footer %>

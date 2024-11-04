@@ -1,0 +1,73 @@
+
+.footer {
+	margin-top: 25px;
+	font-size: 20px;
+    color: #fff;
+    background-color: black;
+    text-align: center;
+    padding: 50px;
+    padding-bottom:10px;
+    top:100vh;
+    top:100%;
+    margin-bottom:-400px;
+}
+
+.fa {
+    padding: 10px;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    margin: 10px 15px;
+  }
+  
+  .fa:hover {
+      opacity: 0.7;
+  }
+  
+  .fa-phone {
+    background: #126d1f;
+    color: white;
+  }
+  .fa-envelope {
+    background: #dc3333;
+    color: white;
+  }
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  
+  .fa-google {
+    background: #dd4b39;
+    color: white;
+  }
+  
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+  
+  .fa-youtube {
+    background: #bb0000;
+    color: white;
+  }
+  
+  .fa-instagram {
+    background: #f40083;
+    color: white;
+  }
+
+  
+.fa-reddit {
+    background: #ff5700;
+    color: white;
+  }
+  .copyright{
+    font-size:15px;
+
+  }

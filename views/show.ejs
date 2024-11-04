@@ -1,0 +1,84 @@
+
+
+<% include ./partials/header %>
+<link rel="stylesheet" href="/views/show.css">
+	<%
+	if(product != '') { 
+		%>
+		<div class="product-container">
+			<div class="width-spacer">
+
+			</div>
+			<div>
+				<a class="col text-center category__link">
+					<div class="category__img category__img--large shadow">
+						<img src="<%=product.image%>"></img>
+					</div>
+					<h1>Rs. <%=product.price%></h1>
+				</a>
+			</div>
+			<div class="width-spacer">
+
+			</div>
+			<div class="col text-center category__link content">
+				<h1><%=product.brand%></h1>
+				<h3><%=product.title%></h3>
+			
+				<p><%= product.created.toDateString() %></p>
+				<div class="description">
+					<p><%= product.body %></p>
+				</div>
+			</div>
+		</div>
+		<%}%>
+		<div class="add">
+			<h2>Leave a Review</h2>
+			<form action="/products/<%=product._id%>/reviews" method="POST" class="mb-3 validated-form" novalidate>
+				
+				<fieldset>
+					<input type="radio" id="first-rate1" name="review[rating]" value="1" />
+					<label for="first-rate1" title="Terrible">1 star</label>
+					<input type="radio" id="first-rate2" name="review[rating]" value="2" />
+					<label for="first-rate2" title="Not good">2 stars</label>
+					<input type="radio" id="first-rate3" name="review[rating]" value="3" />
+					<label for="first-rate3" title="Average">3 stars</label>
+					<input type="radio" id="first-rate4" name="review[rating]" value="4" />
+					<label for="first-rate4" title="Very good">4 stars</label>
+					<input type="radio" id="first-rate5" name="review[rating]" value="5" />
+					<label for="first-rate5" title="Amazing">5 stars</label>
+				</fieldset>
+				<div >
+					<label  for="body">Name</label>
+					<input type="text" name="review[author]"   required="true" />
+					
+					<label  for="body">Review Text</label>
+					<input type="text" name="review[body]"  required="true">
+					
+				</div>
+				
+
+				<button class="btn btn-success">Submit</button>
+			</form>
+			
+	
+		</div>
+		<div class="reviews">
+			<h2>Reviews</h2>
+			
+			<% if(product.reviews){%>
+				<%for(let review of product.reviews) { %>
+				<a class="col text-center category__link border shadow">
+					<span style="font-size: 25px">Rated by <%=review.author%></span>
+					<span>( <%= review.created.toDateString() %>)</span> 
+					<p>Rated: <%= review.rating %> stars</p>
+					<p>Review: <%= review.body %></p>
+				</a>
+
+			<% }} %>
+				</div>
+					
+			</div>
+		</div>
+
+
+<% include ./partials/footer %>
